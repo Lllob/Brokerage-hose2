@@ -1,0 +1,78 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 70vh;
+    background-color: #ecd8b3;
+}
+
+.home .div {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.home .divImg {
+    width: 45%;
+    height: auto;
+}
+
+.home .img {
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+}
+
+.home .name {
+    margin-left: 8rem;
+   margin-top: -20rem;
+    color: #f8a408;
+    font-size: 40px;
+}
+
+.home .parag {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.home .title2 {
+    font-size: 26px;
+    padding-left: 10rem;
+}
+
+.home .desc, .desc2 {
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.home .desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.home span {
+    width: 23rem;
+}
+
+
+
+.home ul {
+    list-style: none;
+}
+
+.home li {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.home i {
+    margin-right: 40px;
+}

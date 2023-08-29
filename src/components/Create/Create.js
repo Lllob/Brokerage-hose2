@@ -1,0 +1,97 @@
+import { useContext } from 'react';
+import { PostContext } from '../../contexts/PostContext';
+import { AuthContext } from '../../contexts/AuthContext';
+import * as postService from '../../services/postService';
+import { useNavigate } from 'react-router-dom';
+
+const Create = () => {
+    const { postCreate } = useContext(PostContext);
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate()
+    
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const postData = Object.fromEntries(new FormData(e.target));
+        
+             if (postData.title === '' || postData.description === '' || postData.imageUrl === '' || postData.type === '' || postData.price === '') {
+              return alert('Pleas, fill all fields!')
+             }
+
+             if (isNaN(Number(postData.price))) {
+                return alert('Price must be a number')
+             }
+             //console.log(`Create user ${user._id}`)
+
+             const formData = new FormData(e.target)
+             const title = formData.get('title')
+             const imageUrl = formData.get('imageUrl')
+             const description = formData.get('description')
+             const price = Number(formData.get('price'))
+             const type = formData.get('type')
+      
+          const data = {
+            title, 
+            imageUrl,
+            description,
+            price,
+            type,
+            owner: user._id,
+          }  
+          
+         //console.log('data ' + Object.entries(data))
+        postService.create(data)
+        .then(data => { 
+          if (data.error) {
+            alert(data.error['message'])
+            return;
+          }
+            postCreate(data)//vkarvame dannite vav postCreate (ot PostContext.js, i vav steita)
+            navigate('/catalog')
+        });
+        
+    };
+
+
+
+return(
+  <div className="create">
+  <div className="div">
+    <h1>Create New Post</h1>
+    <p>Please fill all fields.</p>
+  </div>
+  <form onSubmit={onSubmit} action='/create' method='post'>
+    <div className="formDiv">
+      <div className="inputD">
+        <label htmlFor="title">Title</label>
+        <input name="title" type="text" placeholder="Title" />
+      </div>
+      <div className="inputD">
+        <label htmlFor="imageUrl">Image url</label>
+        <input name="imageUrl" type="text" placeholder="Image" />
+      </div>
+      <div className="inputD">
+        <label htmlFor="description">Description</label>
+        <input name="description" type="text" placeholder="Description" />
+      </div>
+      <div className="inputD">
+        <label htmlFor="price"> Price</label>
+        <input name="price" type="text" placeholder="Price" />
+      </div>
+      <div className="inputD">
+        <label htmlFor="type">Select Room:</label>
+        <select name="type">
+          <option value="Apartment">Apartment</option>
+          <option value="Doubleroom">Double room</option>
+          <option value="Singleroom">Single room</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <button className="btn">Create</button> {/*[disabled]="inValid"*/}
+    </div>
+  </form>
+</div>
+  )
+};
+
+export default Create;
