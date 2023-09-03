@@ -1,8 +1,6 @@
-const router = require('express').Router(); //ot nod-moduele/express
-
+const router = require('express').Router(); 
 router.get('/', (req, res) => {
     res.send("App is Working");
-    //res.render('home', { title: 'Home'})
 });
 
-module.exports = router; //otivame v config/routes.js
+module.exports = router;

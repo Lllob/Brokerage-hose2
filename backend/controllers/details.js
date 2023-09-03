@@ -1,4 +1,4 @@
-const router = require('express').Router(); //ot nod-moduele/express
+const router = require('express').Router();
 
 const { getDataFromToken } = require('../util/generateToken')
 const { createPost, getPostById, editPost, deletePost, buyer, likesPost, getProfil, getShopping } = require('../services/create') //
@@ -61,7 +61,7 @@ router.get('/details/:id', isUser() , async (req, res) => {
     try {
       const id = req.params.id;
         const result = await editPost(id, post)
-        res.status(200).json(result); //davame dannite na frontenda
+        res.status(200).json(result); 
         
     } catch (err) {
       console.error(err);

@@ -79,7 +79,7 @@ return(
       </div>
       <div className="inputD">
         <label htmlFor="description">Description</label>
-        <input name="description" type="text" defaultValue={post.description} />
+        <textarea className='desc' name="description" type="text" defaultValue={post.description} />
       </div>
       <div className="inputD">
         <label htmlFor="price"> Price</label>

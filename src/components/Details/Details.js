@@ -55,7 +55,30 @@ const Details = () => {
   const currentPost = tekPost(postId.id);
  // const isOwner = currentPost.owner === user._id; 
      
- //////////////////////////////////////
+
+  ///////////////////////////////////////////////
+ //seeMore
+ const moreClickHandler = (e) => { //<button
+  e.preventDefault()
+  let elemHtml = document.querySelector('.desc') //<p className="desc"
+
+  if (e.target.textContent === 'Read more') { 
+    let el = e.target //<button..
+    elemHtml.style.overflow="visible"
+    elemHtml.style.height='auto' //<p clasName="desc" //overflowY='scroll'
+    elemHtml.style.display='block'
+     el.parentNode.parentNode.parentNode.style.height = "auto" //grantParent
+     e.target.textContent = 'Read less'
+  } else {
+    let el = e.target //<button..
+    elemHtml.style.overflow="hidden"
+    elemHtml.style.height='10rem';
+    elemHtml.style.display='-webkit-box'
+    el.parentNode.parentNode.parentNode.style.height = "70vh"
+    e.target.textContent = 'Read more'
+  } 
+}
+////////////////////////////////
        
     /////Delete
     const postDeleteHandler = () => {
@@ -111,6 +134,7 @@ const Details = () => {
     <h2 className="title2"><span>Tytle: </span>{currentPost.title}</h2>
     <p className="type"><span>Type of room: </span>{currentPost.type}</p>
     <p className="desc"><span>Description: </span>{currentPost.description}</p>
+    <button className='btnMore' onClick={moreClickHandler}>Read more</button>
     <p className="price"><span>Price: </span>{currentPost.price}</p>
     </div>
     <div>

@@ -39,7 +39,6 @@ router.post('/register', async (req, res) => {
             basket: user.basket,
             accessToken
           } 
-          //console.log(`register user.accessToken ${data.accessToken}`)
           res.status(201).json(data) 
         }
        
@@ -58,10 +57,9 @@ router.post('/register', async (req, res) => {
 //TOO check
 router.post('/login', async (req, res) => { 
   try {   
-    //console.log('bodito login ' + req.body.email)
     const user = await login(req.body.email, req.body.password);
  
-    const userData = { //za generateToken()
+    const userData = { 
       _id: user._id,
       email: user.email
     }
@@ -87,7 +85,6 @@ router.post('/login', async (req, res) => {
 
 router.get('/logout', async (req, res) => { // isUser()
   const accessToken = req.header('x-authorization')
-   //console.log('logoutacceessToken ' + accessToken)
   try {
      await logout(accessToken); 
       res.status(204).end();

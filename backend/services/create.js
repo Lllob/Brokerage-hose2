@@ -71,7 +71,7 @@ async function buyer(postId, userId) {
   //console.log(post)
 
   //the offers that the user bought, we put them in .basket[]
-  const user = await User.findById(userId)//(_id) //usera = na ownera na publikaciqta
+  const user = await User.findById(userId)//(_id) 
   user.basket.push(postId) 
   await user.save()
   
@@ -87,7 +87,7 @@ async function likesPost(postId, userId) {
     throw new Error('User has already like it')
   }
   
-  post.likes.push(userId) //vkarvame usera v bouthBy(lista na haresalite posta)
+  post.likes.push(userId) 
   await post.save()
   
   return post.likes.length; 

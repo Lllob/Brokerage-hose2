@@ -1,13 +1,13 @@
-const router = require('express').Router(); //ot nod-moduele/express
-const { search } = require('../services/create') //logikata
+// const router = require('express').Router(); 
+// const { search } = require('../services/create') 
 
 
-router.get('/search', async (req, res) => {
-  let inputText = req.query.text; //inputa <name="text">
-  let inputPay = req.query.platform; //inputa <name="payment">
-  let searching = await search(inputText, inputPay);
+// router.get('/search', async (req, res) => {
+//   let inputText = req.query.text; 
+//   let inputPay = req.query.platform;
+//   let searching = await search(inputText, inputPay);
   
-  res.json(searching)
-})
+//   res.json(searching)
+// })
 
-module.exports = router;
+// module.exports = router;

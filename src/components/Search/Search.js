@@ -18,7 +18,7 @@ const Search = () => {
     const searchList = posts.filter(p =>
      p.title.toLowerCase().includes(searchField.search.toLowerCase()));
 
-      setSearch(searchList) //vkarvame v steita searchLista sas savpadeniqta   
+      setSearch(searchList)
 
        if (searchList.length > 0) {
         setBoolen(true) 

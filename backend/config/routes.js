@@ -1,12 +1,12 @@
 const authController = require('../controllers/auth.js')
-const homeController = require('../controllers/home.js') //vzimame home.js 
+const homeController = require('../controllers/home.js') 
 const catalogController = require('../controllers/catalog.js')
 const detailsController = require('../controllers/details')
 // const searchController = require('../controllers/search')
 
 
 module.exports = (app) => {
-    app.use(authController) //izpolzvai authControler
+    app.use(authController) 
     app.use(homeController) 
     app.use(catalogController)
     app.use(detailsController)

@@ -11,7 +11,7 @@ async function register(username, email, password) {
 
     const hashedPassword = await hash(password, 10)
      
-    const user = new User({//popalvme modela
+    const user = new User({
         username,
         email,
         hashedPassword

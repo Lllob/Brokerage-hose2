@@ -72,7 +72,7 @@ return(
       </div>
       <div className="inputD">
         <label htmlFor="description">Description</label>
-        <input name="description" type="text" placeholder="Description" />
+        <textarea className='desc' name="description" type="text" placeholder="Description" />
       </div>
       <div className="inputD">
         <label htmlFor="price"> Price</label>

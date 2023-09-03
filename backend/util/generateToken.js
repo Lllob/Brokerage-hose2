@@ -14,7 +14,7 @@ function generateToken(id) {
  async function getDataFromToken(accessToken) {
   const validate = await validateToken(accessToken) 
   if (validate) {
-  const data = jwt.verify(accessToken, JWT_SECRET) 
+   const data = jwt.verify(accessToken, JWT_SECRET) 
   return data;
   } else {
     throw new Error('Token is in blacklisted');
