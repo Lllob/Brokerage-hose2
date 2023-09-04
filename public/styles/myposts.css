@@ -5,13 +5,18 @@
 }
 
 .myposts, .myposts .posts {
-    width: auto;
+    width: 100%;
     background-color: rgb(156, 219, 156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
 }
 
 
 .myposts .post {
-    width: 90%;
+    width: 80%;
     height: 60vh;
     display: flex;
     flex-direction: row;

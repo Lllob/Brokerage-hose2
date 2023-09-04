@@ -9,6 +9,8 @@
     background-color: rgb(156, 219, 156);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 

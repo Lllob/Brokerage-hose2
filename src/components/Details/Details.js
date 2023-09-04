@@ -74,7 +74,11 @@ const Details = () => {
     elemHtml.style.overflow="hidden"
     elemHtml.style.height='10rem';
     elemHtml.style.display='-webkit-box'
-    el.parentNode.parentNode.parentNode.style.height = "70vh"
+    if (el.parentNode.parentNode.parentNode.style.width > '600px') {
+      el.parentNode.parentNode.parentNode.style.height = "70vh"
+      } else {
+        el.parentNode.parentNode.parentNode.style.height = "auto"
+      }
     e.target.textContent = 'Read more'
   } 
 }

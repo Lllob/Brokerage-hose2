@@ -26,7 +26,7 @@ const Header = () => {
     {user &&
        <div>
       <li className="list">
-        <Link to="/mylist/:id">My list</Link>
+        <Link className='myL' to="/mylist/:id">My list</Link>
       </li>
       <li className="list">
         <Link to="/create">Create</Link>

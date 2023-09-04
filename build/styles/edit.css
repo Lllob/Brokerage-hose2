@@ -15,6 +15,8 @@
 
 .edit .inputD {
     padding-bottom: 10px;
+    display: flex;
+    justify-content: start;
 }
 
 .edit label {
@@ -49,4 +51,19 @@
 .err {
     font-size: 20px;
     color: red;
+}
+
+.edit .desc {
+    width: 50%;
+    height: 8rem;
+    text-rendering: auto;
+    border: 1px solid rgb(179, 170, 170);
+    font-size: 18px;
+
+    display: inline-block;
+    text-align: start;
+    
+    resize: auto;
+    overflow-wrap: break-word;
+    writing-mode: horizontal-tb !important;   
 }

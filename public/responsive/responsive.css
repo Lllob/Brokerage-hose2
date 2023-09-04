@@ -1,0 +1,132 @@
+@media (max-width: 600px) {
+
+    /*header*/
+  .nav1, .home {
+    max-width: 600px;
+  }
+
+  .nav1 .imgHed, .nav1 .title {
+    display: none;
+  }
+
+  .nav1 a {
+     font-size: 12px;
+     margin-left: 1rem;
+     margin-right: 1rem;
+  }
+
+   .nav1 i {
+    margin-right: 2rem;
+  }
+
+  .nav1 a:hover {
+    font-size: 12px;
+    font-weight: 400;
+    color: green;
+}
+.nav1 .myL:hover {
+    font-size: 12px;
+    font-weight: 400;
+    color: green;
+}
+
+  /*home*/
+  .home {
+    height: auto;
+ }
+
+  .home .div, .home .desc {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .home .divImg {
+    width: auto;
+    height: 30vh;
+  }
+
+  .home .name {
+    display: none;
+  }
+
+  .home .parag {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home .title2 {
+    padding-left: 0px;
+  }
+
+  .home .desc {
+    align-items: center;
+     text-align: center;
+  }
+
+  /*catalog, myList, myshopping*/
+  .catalog h1, .myposts h1, .myShopping h1{
+    font-size: 30px;
+  }
+
+  .catalog .posts, .myposts .posts, .myShopping .posts {
+    width: 90%;
+    gap: 20px;
+    padding-right: 0px;
+  }
+
+  .catalog .list, .myposts .post, .myShopping .post {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0 0 0 0;
+  }
+
+  .catalog img, .myposts img, .myShopping img {
+    width: 80%;
+    height: 30vh;
+    padding-left: 0px;
+  }
+
+    .catalog h2, .myposts h2, .myShopping h2 {
+        font-size: 25px;
+    }
+
+    .catalog .art, .myposts .art, .myShopping .art {
+        width: 90%;
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+
+    /*details*/
+    .details, .edit {
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+
+    .details img {
+        width: 90%;
+        height: 30vh;
+        padding-top: 20px;
+        padding-left: 0px;
+        margin: 0 auto;
+    }
+
+    .details .art {
+        width: 90%;
+        height: auto;
+    }
+
+    .details div:nth-child(1) {
+        height: 70%;
+    }
+
+  /*footer*/
+  .footer h1 {
+    font-size: 30px;
+  }
+
+}
