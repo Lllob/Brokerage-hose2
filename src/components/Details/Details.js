@@ -2,7 +2,7 @@ import {  useContext, useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom'; // ID, link, navigate(/catalog)
 
 import { PostContext } from '../../contexts/PostContext';
-import { useAuthContext } from '../../contexts/AuthContext';//vzimame dannite za usera
+import { useAuthContext } from '../../contexts/AuthContext';
 import * as postService from '../../services/postService';
 
 const Details = () => {

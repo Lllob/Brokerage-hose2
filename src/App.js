@@ -29,6 +29,7 @@ const App = () => {
       <PostProvider>
       <Header />
        
+    <main>
       {/* <Suspense fallback>{<div>Loading...</div>} */}
       <Routes>
      <Route path="/" element={<Home />} />  
@@ -79,7 +80,8 @@ const App = () => {
 
       </Routes>
       {/* </Suspense> */}
-     
+    </main>
+    
     </PostProvider>
     <Footer />
     </AuthProvider>
