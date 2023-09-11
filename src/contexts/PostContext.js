@@ -16,10 +16,10 @@ const postReducer = (state, action) => {
          case 'DETAILS':
             return state.map(p => p._id === action.postId ? action.data : p);
 
-        case 'EDIT'://edit
+        case 'EDIT':
             return state.map(p => p._id === action.postId ? action.data : p);
 
-        case 'REMOVE'://delete
+        case 'REMOVE':
             return state.filter(p => p._id !== action.postId);
 
         default: 
@@ -35,7 +35,7 @@ export const PostProvider = ({
     const navigate = useNavigate();
     const [posts, dispatch] = useReducer(postReducer, []);
 
-     //cataloga
+     //catalog
     useEffect(() => {
         postService.getCatalog()
             .then(result => { 
@@ -62,7 +62,6 @@ export const PostProvider = ({
             data,
             postId,   
         };
-        //console.log(action)
          dispatch(action)
        }
     };
@@ -73,7 +72,6 @@ export const PostProvider = ({
             type: 'CREATE',
             data: postData, 
         })
-        //console.log(posts)
         navigate('/catalog');
     };
     
@@ -95,7 +93,6 @@ export const PostProvider = ({
             type: 'REMOVE',
             postId,
         })
-        //console.log(postId)
     }
 
 

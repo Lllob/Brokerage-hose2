@@ -58,8 +58,8 @@
 .nav1 .title {
     font-family: 'Mystery Quest', cursive;
     margin-left: 5rem;
-    margin-right: 10rem;
-    letter-spacing: 10px;
+    margin-right: 8rem;
+    letter-spacing: 8px;
 }
 
 .nav1 .sear {
@@ -85,7 +85,7 @@
     font-weight: 300;
 }
 
-.nav1 a:hover {
+/* .nav1 a:hover {
     font-size: 20px;
     font-weight: 400;
-}
+} */

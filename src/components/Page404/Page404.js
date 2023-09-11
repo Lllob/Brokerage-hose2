@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Page404 = () => {
 return (
-<section class="errorPage">
+<section className="errorPage">
   <div className="err-container">
     <h1>404</h1>
     <h2>Page Not Found</h2>
