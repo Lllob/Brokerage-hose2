@@ -36,6 +36,7 @@
     width: 50%;
     height: 50vh;
     padding-left: 20px;
+    object-fit: cover;
 } 
 
 .catalog .art {

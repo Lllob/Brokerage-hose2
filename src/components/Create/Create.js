@@ -55,7 +55,7 @@ const Create = () => {
 
 
 return(
-  <div className="create">
+<div className="create">
   <div className="div">
     <h1>Create New Post</h1>
     <p>Please fill all fields.</p>

@@ -69,11 +69,13 @@ const Details = () => {
     elemHtml.style.display='block'
      el.parentNode.parentNode.parentNode.style.height = "auto" //grantParent
      e.target.textContent = 'Read less'
+     console.log(el.parentNode.parentNode.parentNode)
   } else {
     let el = e.target //<button..
     elemHtml.style.overflow="hidden"
     elemHtml.style.height='10rem';
     elemHtml.style.display='-webkit-box'
+    console.log(el.parentNode.parentNode.parentNode.style.height)
     if (el.parentNode.parentNode.parentNode.style.width > '600px') {
       el.parentNode.parentNode.parentNode.style.height = "70vh"
       } else {
@@ -141,8 +143,8 @@ const Details = () => {
     <button className='btnMore' onClick={moreClickHandler}>Read more</button>
     <p className="price"><span>Price: </span>{currentPost.price}</p>
     </div>
-    <div>
-    {/* Edit/Delete buttons ( Only for creator of this post ) */}
+     <div>
+        {/* Edit/Delete buttons ( Only for creator of this post ) */}
         {isOwner && 
         <div>
           <Link className="btn" to={`/edit/${currentPost._id}`}>
@@ -153,7 +155,7 @@ const Details = () => {
           </button>
         </div>
         } 
-    </div>
+        </div>
 
        <div className='buyL'>
         <div>
@@ -164,9 +166,8 @@ const Details = () => {
             }
             </div>
         }
-         <p>Total buy: {totalBuy}</p>
          </div>
-         
+         <p className='lb'>Total buy: {totalBuy}</p>
          <div>
         {!isOwner &&
            <div>
@@ -174,11 +175,10 @@ const Details = () => {
                <button className="btn" onClick={likeHandler}>Like</button>
             }
              </div>
-        }
-        <p>Total like: {totalLikes}</p>
+         }
+           <p className='lb'>Total like: {totalLikes}</p>
         </div>
       </div>
-
   </article>
 </div>
   )

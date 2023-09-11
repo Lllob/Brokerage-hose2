@@ -19,6 +19,7 @@
     height: 50vh;
     padding-left: 20px;
     padding-top: 4.5rem;
+    object-fit: cover;
 }
 
 .details .art {
@@ -38,7 +39,7 @@
     border: 1px solid rgb(21, 21, 234);
     border-radius: 8px;
     margin-right: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     cursor: pointer;
 }
 
@@ -78,4 +79,8 @@
     border-radius: 6px;
     padding: 5px;
     font-size: 16px;
+  }
+
+  .details .lb {
+    margin: 1px;
   }

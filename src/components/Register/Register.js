@@ -92,19 +92,19 @@ const Register = () => {
     </div>
     <div className="email">
       <label htmlFor="email">Email</label>
-      <input onInput={onEmail} type="text" name="email" id="email"  placeholder='pesho@aaa.com' />
+      <input onInput={onEmail} type="email" name="email" id="email"  placeholder='pesho@aaa.com' />
       <div className='err'>{emailMess}</div>
     </div>
 
     <div className="password">
       <label htmlFor="password">Password</label>
-     <input onInput={onPass} type="text" name="password" placeholder='password' />
+     <input onInput={onPass} type="password" name="password" placeholder='password' />
      <div className='err'>{passMess}</div>
     </div>
 
     <div className="repass">
       <label htmlFor="repass">Repeat password</label>
-      <input type="text" name="repass" />
+      <input type="password" name="repass" />
     </div>
     
     <button type='submit'>Register</button>
