@@ -13,7 +13,7 @@ const createSchema = new Schema({
 });
 
 
-const Create = model('Create', createSchema)
+const Create = model('CreateRealEA', createSchema)
 Create.createIndexes();
                
 module.exports = Create; 

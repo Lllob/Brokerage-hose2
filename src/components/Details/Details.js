@@ -61,25 +61,25 @@ const Details = () => {
  const moreClickHandler = (e) => { //<button
   e.preventDefault()
   let elemHtml = document.querySelector('.desc') //<p className="desc"
-
+  
   if (e.target.textContent === 'Read more') { 
     let el = e.target //<button..
     elemHtml.style.overflow="visible"
     elemHtml.style.height='auto' //<p clasName="desc" //overflowY='scroll'
     elemHtml.style.display='block'
-     el.parentNode.parentNode.parentNode.style.height = "auto" //grantParent
+     el.parentNode.parentNode.parentNode.style.height = "100%" //grantParent
      e.target.textContent = 'Read less'
-     console.log(el.parentNode.parentNode.parentNode)
+    
   } else {
-    let el = e.target //<button..
     elemHtml.style.overflow="hidden"
-    elemHtml.style.height='10rem';
+    elemHtml.style.height='4rem';
     elemHtml.style.display='-webkit-box'
-    console.log(el.parentNode.parentNode.parentNode.style.height)
-    if (el.parentNode.parentNode.parentNode.style.width > '600px') {
-      el.parentNode.parentNode.parentNode.style.height = "70vh"
+    let parent = document.querySelector('div.details')
+     //  parent = el.parentNode.parentNode.parentNode
+    if (parent.style.height !== 'auto') {
+      parent.style.height = "75vh"
       } else {
-        el.parentNode.parentNode.parentNode.style.height = "auto"
+        parent.style.height = "auto"
       }
     e.target.textContent = 'Read more'
   } 
@@ -141,6 +141,7 @@ const Details = () => {
     <p className="type"><span>Type of room: </span>{currentPost.type}</p>
     <p className="desc"><span>Description: </span>{currentPost.description}</p>
     <button className='btnMore' onClick={moreClickHandler}>Read more</button>
+    
     <p className="price"><span>Price: </span>{currentPost.price}</p>
     </div>
      <div>
