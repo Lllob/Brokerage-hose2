@@ -1,25 +1,26 @@
-//import { lazy, Suspense } from "react";//npm run build //
+import { lazy, Suspense } from "react";//npm run build //
 import { Routes, Route } from 'react-router-dom'; //npm i react-router-dom 
 
  import { PostProvider } from './contexts/PostContext';
  import { AuthProvider } from './contexts/AuthContext';
  import PrivateRoute from "./components/common/PrivateRoute"; 
+ import './App.css';
 
-  import  Header  from './components/Header/Header.js'
-  import Home from './components/Home/Home'
-  import  Register from './components/Register/Register.js'
-  import  Login  from './components/Login/Login.js'
-  import Logout from './components/Logout/Logout';
-  import  Catalog  from './components/Catalog/Catalog'
-  import  Details  from './components/Details/Details'
-  import  Create  from './components/Create/Create'
-  import  Edit  from './components/Edit/Edit'
-  import MyPosts from './components/MyPosts/MyPosts'
-  import Shopping from './components/Shopping/Shopping'
-  import  Search  from './components/Search/Search'
-  import  Footer  from './components/Footer/Footer'
-  import  Page404  from './components/Page404/Page404';
-  //const Search = lazy(() => import('./components/Search/Search'));
+ import  Header  from './components/Header/Header.js'
+ import  Footer  from './components/Footer/Footer'
+ 
+ const Home = lazy(() => import('./components/Home/Home'));
+ const Register = lazy(() => import('./components/Register/Register.js'));
+ const Login = lazy(() => import('./components/Login/Login.js'));
+const Logout = lazy(() => import('./components/Logout/Logout'));
+const Catalog = lazy(() => import('./components/Catalog/Catalog'));
+const Details = lazy(() => import('./components/Details/Details'));
+const Create = lazy(() => import('./components/Create/Create'));
+const Edit = lazy(() => import('./components/Edit/Edit'));
+const MyPosts = lazy(() => import('./components/MyPosts/MyPosts'));
+const Shopping = lazy(() => import('./components/Shopping/Shopping'));
+const Search = lazy(() => import('./components/Search/Search'));
+const Page404 = lazy(() => import('./components/Page404/Page404'));
 
 const App = () => {
   return (
@@ -30,7 +31,7 @@ const App = () => {
       <Header />
        
     <main>
-      {/* <Suspense fallback>{<div>Loading...</div>} */}
+       <Suspense fallback={<div>Loading...</div>}>
       <Routes>
      <Route path="/" element={<Home />} />  
       <Route path="/register" element={<Register />} />
@@ -79,7 +80,7 @@ const App = () => {
      <Route path="*" element={<Page404 />} />
 
       </Routes>
-      {/* </Suspense> */}
+       </Suspense> 
     </main>
     
     </PostProvider>

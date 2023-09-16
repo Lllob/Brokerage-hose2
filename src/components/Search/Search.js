@@ -11,7 +11,6 @@ const Search = () => {
   
   const onSubmit = (e) => { 
     e.preventDefault();
-    //console.log(e.target.value)
     
     let searchField = Object.fromEntries(new FormData(e.target));
 
