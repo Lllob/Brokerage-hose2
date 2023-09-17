@@ -18,10 +18,9 @@ const Create = () => {
               return alert('Pleas, fill all fields!')
              }
 
-             if (isNaN(Number(postData.price))) {
-                return alert('Price must be a number')
-             }
-             //console.log(`Create user ${user._id}`)
+            //  if (isNaN(Number(postData.price))) {
+            //     return alert('Price must be a number')
+            //  }
 
              const formData = new FormData(e.target)
              const title = formData.get('title')
@@ -64,19 +63,28 @@ return(
     <div className="formDiv">
       <div className="inputD">
         <label htmlFor="title">Title</label>
-        <input name="title" type="text" placeholder="Title" />
+        <input name="title" type="text" required
+        minLength="2" placeholder="Title" 
+        />
       </div>
       <div className="inputD">
         <label htmlFor="imageUrl">Image url</label>
-        <input name="imageUrl" type="text" placeholder="Image" />
+        <input name="imageUrl" type="text" required
+        pattern="((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)" 
+        placeholder="Image" 
+        />
       </div>
       <div className="inputD">
         <label htmlFor="description">Description</label>
-        <textarea className='desc' name="description" type="text" placeholder="Description" />
+        <textarea className='desc' name="description" type="text" required
+        minLength="4" placeholder="Description" 
+        />
       </div>
       <div className="inputD">
         <label htmlFor="price"> Price</label>
-        <input name="price" type="text" placeholder="Price" />
+        <input name="price" type="number" required
+        min="2" placeholder="Price" 
+        />
       </div>
       <div className="inputD">
         <label htmlFor="type">Select Room:</label>

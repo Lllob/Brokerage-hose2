@@ -25,7 +25,7 @@ const Register = () => {
   let onEmail = (e) => { //<input onInput={onEmail} >
     e.preventDefault()
     let em = e.target.value 
-    let emRegex = /([a-zA-Z]+)@([a-zA-Z]+)\.([a-zA-Z-]+)$/
+    let emRegex = /([a-zA-Z]+)@([a-zA-Z]+)\.([a-zA-Z]+)$/
     let hasMatch = em.match(emRegex)
     //console.log(hasMatch)
     if (!!hasMatch === false) {

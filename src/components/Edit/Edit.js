@@ -71,19 +71,26 @@ return(
     <div className="formDiv">
       <div className="inputD">
         <label htmlFor="title">Title</label>
-        <input name="title" type="text" defaultValue={post.title} />
+        <input name="title" type="text" required
+        minLength="2" defaultValue={post.title} 
+        />
       </div>
       <div className="inputD">
         <label htmlFor="imageUrl">Image url</label>
-        <input name="imageUrl" type="text" defaultValue={post.imageUrl} />
+        <input name="imageUrl" type="text" required
+        pattern="((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)" 
+        defaultValue={post.imageUrl} 
+        />
       </div>
       <div className="inputD">
         <label htmlFor="description">Description</label>
-        <textarea className='desc' name="description" type="text" defaultValue={post.description} />
+        <textarea className='desc' name="description" type="text" required
+        minLength="4" defaultValue={post.description} />
       </div>
       <div className="inputD">
         <label htmlFor="price"> Price</label>
-        <input name="price" type="text" defaultValue={post.price} />
+        <input name="price" type="number" required
+        min="2" defaultValue={post.price} />
       </div>
       <div className="inputD">
         <label htmlFor="type">Select Room:</label>
